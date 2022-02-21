@@ -1,0 +1,33 @@
+"style="padding-left: 10%:text-decoration: none; color:white;
+style="background-color: #02050A; height: 50; display: flex; justify-content: center; align-items: center;"
+style="background-color: #02050A; height: 50; display: flex; justify-content: center; align-items: center;"
+<!doctype html>
+<html>
+<head>
+<title>Add Two Numbers</title>
+<script>
+  var numOne = 10;
+  var numTwo = 20;
+  var sum = numOne+numTwo;
+  document.write("Sum = " + sum);
+</script>
+</head>
+<body>
+
+</body>
+</html>
+ fignomentry
+ let number = parseInt(prompt('Enter the number of terms: '));
+let num1 = 0, num2 = 1, nextTerm;
+
+document.write('Fibonacci Series:');
+
+for (let i = 0; i < number; i++) {
+document.write("<br>");
+document.write(num1);
+nextTerm = num1 + num2;
+num1 = num2;
+num2 = nextTerm;
+}
+
+A prime number is a positive integer that is only divisible by 1 and itself. For example, 2, 3, 5, 7, 11 are the first few prime numbers.

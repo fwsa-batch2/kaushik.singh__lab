@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>modify</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <div class="path"></div>
+
+    <div class="cont">
+
+        <!-- <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">about us</a></li>
+        </ul> -->
+
+        <div class="thumb">
+                <li><img src="dugati.png" alt="" onclick="big('dugati.png');path('#04070F');bg('#e5e5e5')"></li>
+                <li><img src="bmb.png" alt="" onclick="big('bmb.png');path('#04070F');bg('#e5e5e5')"></li>
+                <li><img src="rc.png" alt="" onclick="big('rc.png');path('#04070F');bg('#e5e5e5')"></li>
+                
+        </div>
+
+        <div class="big-img">
+            <img src="rc.png" alt="" class="big">
+        </div>
+
+        <div class="content">
+            <p>Book</p>
+            <h1>Your favourite</h1>
+            <h5>Come On</h5>
+        </div>
+    </div>
+
+</body>
+    <script>
+        function big(img){
+            document.querySelector('.big').src=img;
+        }
+        function path(color){
+            const path=document.querySelector('.path');
+            path.style.background = color;
+        }
+        function bg(background){
+            const bg=document.querySelector('.cont');
+            bg.style.background =background;
+        }
+    </script>
+</html>

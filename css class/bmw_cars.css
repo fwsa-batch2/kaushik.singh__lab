@@ -1,0 +1,42 @@
+body {
+    background-color: #04070F;
+  }
+#con{
+    background-color:#02050A;
+    height:50px;
+    padding-top:1%;
+    text-align:center;
+}
+a{
+  margin-left:10%;
+  text-decoration: none;
+  color:white;
+}
+#wel{
+    width:20%;
+    margin:auto;
+    margin-top:30%;
+    color:white;
+}
+ a:hover{
+   background-color:#003452;
+}
+ #sgn:hover{
+    background-color:#003452;
+ }
+#bmw_sers{
+    position: absolute;
+    background-color: whitesmoke;
+    height: 400px;
+    width: 40%;
+    left: 35%;
+    margin-top: 5%;
+} 
+#car_image{
+    position: absolute;
+    background-color: aqua;
+    height: 200px;
+    width: 20%;
+    left: 35%;
+    margin-top: 5%;
+}

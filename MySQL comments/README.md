@@ -554,7 +554,7 @@ SELECT * FROM markclass_A INNER JOIN markclass_B ON markclass_A.Mark = markclass
 ```
 | Id   | Mark | Name     | Id   | Mark | Name      |
 |:----:|:----:|:--------:|:----:|:----:|:---------:|
-|    2 |    6 | Aswath   |    2 |    6 | Vimal     |
+|    2 |    6 | Aswath   |    2 |    6 | kaja      |
 
 ###### 1 row in set (0.00 sec)
 
@@ -575,7 +575,7 @@ SELECT * FROM markclass_A LEFT JOIN markclass_B ON markclass_A.Mark = markclass_
 | Id   | Mark | Name     | Id   | Mark | Name      |
 |:----:|:----:|:--------:|:----:|:----:|:---------:|
 |    1 |    5 | Vimal    | NULL | NULL | NULL      |
-|    2 |    6 | Aswath   |    2 |    6 | Vimal     |
+|    2 |    6 | Aswath   |    2 |    6 | kaja      |
 
 ###### 2 rows in set (0.00 sec)
 
@@ -636,10 +636,10 @@ SELECT * FROM markclass_A CROSS JOIN markclass_B;
 ```
 | Id   | Mark | Name     | Id   | Mark | Name      |
 |:----:|:----:|:--------:|:----:|:----:|:---------:|
-|    2 |    6 | Aswath   |    1 |    4 | kaja      |
+|    2 |    6 | Aswath   |    1 |    4 | Raj       |
 |    1 |    5 | Vimal    |    1 |    4 | Raj       |
 |    2 |    6 | Aswath   |    2 |    6 | kaja      |
-|    1 |    5 | Vimal    |    2 |    6 | Venkatesh |
+|    1 |    5 | Vimal    |    2 |    6 | kaja      |
 
 ###### 4 rows in set (0.00 sec)
 

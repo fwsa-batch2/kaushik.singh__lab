@@ -545,4 +545,128 @@ mysql> SELECT SUM(age) FROM students;
 
 ###### 1 row in set (0.00 sec)
 
+# Join
+
+### INNER JOIN
+
+```syntax
+SELECT * FROM markclass_A INNER JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark;
+```
+| Id   | Mark | Name     | Id   | Mark | Name      |
+|:----:|:----:|:--------:|:----:|:----:|:---------:|
+|    2 |    6 | Aswath   |    2 |    6 | Vimal     |
+
+###### 1 row in set (0.00 sec)
+
+```syntax
+SELECT markclass_A.Mark, markclass_B.Mark FROM markclass_A INNER JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark;
+```
+| Mark | Mark |
+|:----:|:----:|
+|    6 |    6 |
+
+###### 1 row in set (0.01 sec)
+
+### LEFT JOIN
+
+```syntax
+SELECT * FROM markclass_A LEFT JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark;
+```
+| Id   | Mark | Name     | Id   | Mark | Name      |
+|:----:|:----:|:--------:|:----:|:----:|:---------:|
+|    1 |    5 | Vimal    | NULL | NULL | NULL      |
+|    2 |    6 | Aswath   |    2 |    6 | Vimal     |
+
+###### 2 rows in set (0.00 sec)
+
+```syntax
+ SELECT markclass_A.Mark, markclass_B.Mark FROM markclass_A LEFT JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark;
+```
+| Mark | Mark |
+|:----:|:----:|
+|    5 | NULL |
+|    6 |    6 |
+
+###### 2 rows in set (0.00 sec)
+
+```syntax
+ SELECT markclass_A.Mark, markclass_B.Mark FROM markclass_A LEFT JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark WHERE markclass_B.Mark is NOT NULL;
+```
+| Mark | Mark |
+|:----:|:----:|
+|    6 |    6 |
+
+###### 1 row in set (0.00 sec)
+
+### RIGHT JOIN
+
+```syntax
+SELECT * FROM markclass_A RIGHT JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark;
+```
+| Id   | Mark | Name     | Id   | Mark | Name      |
+|:----:|:----:|:--------:|:----:|:----:|:---------:|
+| NULL | NULL | NULL     |    1 |    4 | Raj       |
+|    2 |    6 | Aswath   |    2 |    6 | kaja      |
+
+###### 2 rows in set (0.00 sec)
+
+```syntax
+ SELECT markclass_A.Mark, markclass_B.Mark FROM markclass_A RIGHT JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark;
+```
+| Mark | Mark |
+|:----:|:----:|
+| NULL |    4 |
+|    6 |    6 |
+
+###### 2 rows in set (0.00 sec)
+
+```syntax
+ SELECT markclass_A.Mark, markclass_B.Mark FROM markclass_A RIGHT JOIN markclass_B ON markclass_A.Mark = markclass_B.Mark WHERE markclass_A.Mark is NOT NULL;
+```
+| Mark | Mark |
+|:----:|:----:|
+|    6 |    6 |
+
+###### 1 row in set (0.00 sec)
+
+### CROSS JOIN
+
+```syntax
+SELECT * FROM markclass_A CROSS JOIN markclass_B;
+```
+| Id   | Mark | Name     | Id   | Mark | Name      |
+|:----:|:----:|:--------:|:----:|:----:|:---------:|
+|    2 |    6 | Aswath   |    1 |    4 | kaja      |
+|    1 |    5 | Vimal    |    1 |    4 | Raj       |
+|    2 |    6 | Aswath   |    2 |    6 | kaja      |
+|    1 |    5 | Vimal    |    2 |    6 | Venkatesh |
+
+###### 4 rows in set (0.00 sec)
+
+```syntax
+SELECT * FROM markclass_A CROSS JOIN markclass_B WHERE markclass_A.Mark = markclass_B.Mark;
+```
+| Id   | Mark | Name     | Id   | Mark | Name      |
+|:----:|:----:|:---------|:----:|:----:|:----------|
+|    2 |    6 |Aswath    |    2 |    6 | kaja      |
+
+###### 1 row in set (0.00 sec)
+* * *
+#Indexing
+
+```syntax
+CREATE INDEX NameIndex ON markclass_A(Name);
+```
+
+```syntax
+DROP INDEX NameIndex ON markclass_A;
+```
+
+* * *
+#ORDER BY
+
+```syntax
+select * from table_name order by name ASC;
+```
+
 

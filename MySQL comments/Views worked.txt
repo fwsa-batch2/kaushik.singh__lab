@@ -1,0 +1,92 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| fresh              |
+| fwsa               |
+| information_schema |
+| kaushik            |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| tendots            |
+| world              |
++--------------------+
+11 rows in set (0.01 sec)
+
+mysql> USE School;
+Database changed
+mysql> CREATE TABLE Students(Id int primary key auto_increment, Firstname varchar(255) NOT NULL, Secondname varchar(255) NOT NULL,Email varchar(255) UNIQUE NOT
+    ->  NULL, Age int(2) NOT NULL, dateofbirth date NOT NULL);
+Query OK, 0 rows affected, 1 warning (0.06 sec)
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_school |
++------------------+
+| students         |
++------------------+
+1 row in set (0.01 sec)
+
+mysql> DESC Students;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| Id          | int          | NO   | PRI | NULL    | auto_increment |
+| Firstname   | varchar(255) | NO   |     | NULL    |                |
+| Secondname  | varchar(255) | NO   |     | NULL    |                |
+| Email       | varchar(255) | NO   | UNI | NULL    |                |
+| Age         | int          | NO   |     | NULL    |                |
+| dateofbirth | date         | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+
+mysql> INSERT INTO Students (Firstname,Secondname,Email,Age,dateofbirth) VALUES
+    -> ('Aswath','kaja','Aswathkaja007@gmail.com','17','2004-02-16');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Students (Firstname,Secondname,Email,Age,dateofbirth) VALUES
+    -> ('Vimal','raj','vimal@gmail.com','19','2002-12-20');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Students (Firstname,Secondname,Email,Age,dateofbirth) VALUES
+    -> ('Prasanna','venkatesh','prasannavenkatesh@gmail.com','21','2001-01-20');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM Students;
++----+-----------+------------+-----------------------------+-----+-------------+
+| Id | Firstname | Secondname | Email                       | Age | dateofbirth |
++----+-----------+------------+-----------------------------+-----+-------------+
+|  1 | Aswath    | kaja       | Aswathkaja007@gmail.com     |  17 | 2004-02-16  |
+|  2 | Vimal     | raj        | vimal@gmail.com             |  19 | 2002-12-20  |
+|  3 | Prasanna  | venkatesh  | prasannavenkatesh@gmail.com |  21 | 2001-01-20  |
++----+-----------+------------+-----------------------------+-----+-------------+
+3 rows in set (0.00 sec)
+
+mysql> CREATE VIEW view_name AS SELECT Firstname,Age FROM Students WHERE age>17;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM view_name;
++-----------+-----+
+| Firstname | Age |
++-----------+-----+
+| Vimal     |  19 |
+| Prasanna  |  21 |
++-----------+-----+
+2 rows in set (0.01 sec)
+
+mysql> CREATE OR REPLACE VIEW view_name AS SELECT Firstname,Age FROM Students WHErE Age=19;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT * FROM view_name;
++-----------+-----+
+| Firstname | Age |
++-----------+-----+
+| Vimal     |  19 |
++-----------+-----+
+1 row in set (0.00 sec)
+
+mysql> RENAME TABLE view_name TO students_age;
+Query OK, 0 rows affected (0.01 sec)

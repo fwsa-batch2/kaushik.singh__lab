@@ -1,0 +1,124 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| fresh              |
+| fwsa               |
+| information_schema |
+| kaushik            |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| tendots            |
+| world              |
++--------------------+
+10 rows in set (0.01 sec)
+
+mysql> DROP DATABASE fresh;
+Query OK, 5 rows affected (0.07 sec)
+
+mysql> CREATE DATABASE fresh;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> USE fresh;
+Database changed
+mysql> CREATE TABLE user(id int PRIMARY KEY auto_increment, Name varchar(100) NOT NULL);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE batch(id int PRIMARY KEY auto_increment, Name varchar(100) NOT NULL);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE Courses(id int PRIMARY KEY auto_increment, Name varchar(100) NOT NULL);
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DESC user;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| Name  | varchar(100) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.01 sec)
+
+mysql> DESC batch;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| Name  | varchar(100) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> DESC courses;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int          | NO   | PRI | NULL    | auto_increment |
+| Name  | varchar(100) | NO   |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO user(Name) VALUES('Surya'),('Dhaya');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql>  INSERT INTO batch(Name) VALUES('Batch1'),('Batch2');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO courses(Name) VALUES('HTML'),('CSS'),('JS');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> CREATE TABLE batch_user(Id int PRIMARY KEY AUTO_INCREMENT,Batch_id int,User_id int, FOREIGN KEY(Batch_id) REFERENCES batch(id),FOREIGN KEY(User_id) REFERENCES user(id));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> CREATE TABLE batch_courses(Id int PRIMARY KEY AUTO_INCREMENT,Batch_id int,Course_id int, FOREIGN KEY(Batch_id) REFERENCES batch(id),FOREIGN KEY(Course_id) REFERENCES user(id));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql>  INSERT INTO batch_user(Batch_id,User_id) VALUES(1,1),(1,2),(1,2);
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO batch_courses(Batch_id,Course_id) VALUES(1,3),(2,1),(2,2),(2,3);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`fresh`.`batch_courses`, CONSTRAINT `batch_courses_ibfk_2` FOREIGN KEY (`Course_id`) REFERENCES `user` (`id`))
+mysql> DESC batch_user;
++----------+------+------+-----+---------+----------------+
+| Field    | Type | Null | Key | Default | Extra          |
++----------+------+------+-----+---------+----------------+
+| Id       | int  | NO   | PRI | NULL    | auto_increment |
+| Batch_id | int  | YES  | MUL | NULL    |                |
+| User_id  | int  | YES  | MUL | NULL    |                |
++----------+------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> DESC batch_courses;
++-----------+------+------+-----+---------+----------------+
+| Field     | Type | Null | Key | Default | Extra          |
++-----------+------+------+-----+---------+----------------+
+| Id        | int  | NO   | PRI | NULL    | auto_increment |
+| Batch_id  | int  | YES  | MUL | NULL    |                |
+| Course_id | int  | YES  | MUL | NULL    |                |
++-----------+------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT * FROM batch_user;
++----+----------+---------+
+| Id | Batch_id | User_id |
++----+----------+---------+
+|  1 |        1 |       1 |
+|  2 |        1 |       2 |
+|  3 |        1 |       2 |
++----+----------+---------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT user.id,user.name AS username,batch.name AS batch FROM batch_user JOIN user ON batch_user.user_id = user.id JOIN batch ON batch_user.batch_id = batch.id;
++----+----------+--------+
+| id | username | batch  |
++----+----------+--------+
+|  2 | Dhaya    | Batch1 |
+|  2 | Dhaya    | Batch1 |
+|  1 | Surya    | Batch1 |
++----+----------+--------+
+3 rows in set (0.00 sec)

@@ -1,0 +1,106 @@
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| fresh              |
+| fwsa               |
+| information_schema |
+| kaushik            |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| tendots            |
+| world              |
++--------------------+
+11 rows in set (0.01 sec)
+
+mysql> USE school;
+Database changed
+mysql> SHOW tables;
++------------------+
+| Tables_in_school |
++------------------+
+| students         |
+| students_age     |
++------------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM students;
++----+-----------+------------+-----------------------------+-----+-------------+
+| Id | Firstname | Secondname | Email                       | Age | dateofbirth |
++----+-----------+------------+-----------------------------+-----+-------------+
+|  1 | Aswath    | kaja       | Aswathkaja007@gmail.com     |  17 | 2004-02-16  |
+|  2 | Vimal     | raj        | vimal@gmail.com             |  19 | 2002-12-20  |
+|  3 | Prasanna  | venkatesh  | prasannavenkatesh@gmail.com |  21 | 2001-01-20  |
++----+-----------+------------+-----------------------------+-----+-------------+
+3 rows in set (0.05 sec)
+
+mysql> SELECT * FROM students_age;
++-----------+-----+
+| Firstname | Age |
++-----------+-----+
+| Vimal     |  19 |
++-----------+-----+
+1 row in set (0.01 sec)
+
+mysql> SELECT * FROM students where age> 17;
++----+-----------+------------+-----------------------------+-----+-------------+
+| Id | Firstname | Secondname | Email                       | Age | dateofbirth |
++----+-----------+------------+-----------------------------+-----+-------------+
+|  2 | Vimal     | raj        | vimal@gmail.com             |  19 | 2002-12-20  |
+|  3 | Prasanna  | venkatesh  | prasannavenkatesh@gmail.com |  21 | 2001-01-20  |
++----+-----------+------------+-----------------------------+-----+-------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT a.Firstname FROM (SELECT * FROM students where age>17) as a;
++-----------+
+| Firstname |
++-----------+
+| Vimal     |
+| Prasanna  |
++-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM WHERE age>(SELECT COUNT(age) FROM students);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE age>(SELECT COUNT(age) FROM students)' at line 1
+mysql> SELECT * FROM WHERE age>(SELECT avg(age) FROM students);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE age>(SELECT avg(age) FROM students)' at line 1
+mysql> SELECT * FROM students WHERE age>(SELECT COUNT(age) FROM students);
++----+-----------+------------+-----------------------------+-----+-------------+
+| Id | Firstname | Secondname | Email                       | Age | dateofbirth |
++----+-----------+------------+-----------------------------+-----+-------------+
+|  1 | Aswath    | kaja       | Aswathkaja007@gmail.com     |  17 | 2004-02-16  |
+|  2 | Vimal     | raj        | vimal@gmail.com             |  19 | 2002-12-20  |
+|  3 | Prasanna  | venkatesh  | prasannavenkatesh@gmail.com |  21 | 2001-01-20  |
++----+-----------+------------+-----------------------------+-----+-------------+
+3 rows in set (0.01 sec)
+
+mysql> SELECT COUNT(age) FROM students;
++------------+
+| COUNT(age) |
++------------+
+|          3 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT avg(age) FROM students;
++----------+
+| avg(age) |
++----------+
+|  19.0000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT students_age.Firstname,students.age FROM students_age,students;
++-----------+-----+
+| Firstname | age |
++-----------+-----+
+| Vimal     |  17 |
+| Vimal     |  19 |
+| Vimal     |  21 |
++-----------+-----+
+3 rows in set (0.00 sec)
+
+mysql>

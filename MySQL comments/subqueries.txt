@@ -63,10 +63,6 @@ mysql> SELECT a.Firstname FROM (SELECT * FROM students where age>17) as a;
 +-----------+
 2 rows in set (0.00 sec)
 
-mysql> SELECT * FROM WHERE age>(SELECT COUNT(age) FROM students);
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE age>(SELECT COUNT(age) FROM students)' at line 1
-mysql> SELECT * FROM WHERE age>(SELECT avg(age) FROM students);
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE age>(SELECT avg(age) FROM students)' at line 1
 mysql> SELECT * FROM students WHERE age>(SELECT COUNT(age) FROM students);
 +----+-----------+------------+-----------------------------+-----+-------------+
 | Id | Firstname | Secondname | Email                       | Age | dateofbirth |

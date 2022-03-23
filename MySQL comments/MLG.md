@@ -536,9 +536,8 @@ INSERT INTO vehicle(id,Names,Description,price,company_id,models_id)values(8003,
 INSERT INTO vehicle(id,Names,Description,price,company_id,models_id)values(8004,'Dominor 400','The Dominar 400 sports an LED headlight and turn indicators. Instrumentation is fully-digital and consists of a twin-display setup.',213001,800,80083);
 ```
 SELECT * FROM vehicle;
-+------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------------------+---------------------+------------+-----------+
-| Id   | Names               | Description                                                                                                                                                                | price      | Created_date        | Modify_date         | company_id | models_id |
-+------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------------------+---------------------+------------+-----------+
+| Id   | Names               | Description  | price      | Created_date        | Modify_date         | company_id | models_id |
+
 | 1001 | D V2                | Panigale V2 consists of the classic                                                                                                                                        |    1700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10010 |
 | 1002 | D V4                | THE Panigale V4 sporty monochrome Ducati                                                                                                                                   |    5700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10011 |
 | 1003 | D Monster           | THE  Monster is a standard, or naked bike                                                                                                                                  |    2400001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10012 |
@@ -603,7 +602,7 @@ SELECT * FROM vehicle;
 | 8802 | Mg X motion         |  MG OFFERS A TOTAL OF FIVE PRODUCTS WHICH ARE PETROL , DIESEL AND ELECTRIC .                                                                                               |    8000001 | 2022-03-22 21:38:46 | 2022-03-22 21:38:46 |          8 |       881 |
 | 8803 | Mg Hector           | MG HECTOR VARIANTS: IT IS AVAILABLE IN FOUR TRIMS: STYLE                                                                                                                   |    7100001 | 2022-03-22 21:38:46 | 2022-03-22 21:38:46 |          8 |       882 |
 | 8804 | Mg Gloster          | THE BASE MODEL OF GLOSTER IS SUPER                                                                                                                                         |    2100001 | 2022-03-22 21:38:46 | 2022-03-22 21:38:46 |          8 |       883 |
-+------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------------------+---------------------+------------+-----------+
+
 ### MySQL INSERTING INTO role...
 ```syntax
 INSERT INTO role(id,Names)values(1,'Super Admin');
@@ -705,13 +704,12 @@ INSERT INTO reviews(id,Names,user_id,description)values(2232,'Aswath',3,'Mlg is 
 INSERT INTO reviews(id,Names,user_id,description)values(2233,'Haiden',4,'I found mlg the best place to sell my car. Very good valuation, Very supportive staff and totally hassle free procedure.I was able to sell my car within a day. Thanks Mlg.');
 ```
 SELECT * FROM reviews;
-+------+---------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------+
-| Id   | Names   | user_id | description                                                                                                                                                                                                                               | Created_date        | Modify_date         |
-+------+---------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------+
+| Id   | Names   | user_id | description| Created_date| Modify_date|
+
 | 2231 | kaushik |       1 | I booked an appointment for a test drive of the RR panthom I chose on the Mlg website. The purchasing process is very easy; once you are done with the paper work and finish the payment, you can take your car home, Thanks to cithra    | 2022-03-23 00:25:33 | 2022-03-23 00:25:33 |
 | 2232 | Aswath  |       3 | Mlg is a trusted dealer to buy and sell used cars. I bought a car from one of their branches about six months ago. It is running smoothly; I haven’t faced any issues so far and it looks like a new car. I am happy with the purchase.   | 2022-03-23 00:27:40 | 2022-03-23 00:27:40 |
 | 2233 | Haiden  |       4 | I found mlg the best place to sell my car. Very good valuation, Very supportive staff and totally hassle free procedure.I was able to sell my car within a day. Thanks Mlg.                                                               | 2022-03-23 00:27:40 | 2022-03-23 00:27:40 |
-+------+---------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------+
+
 ### ALTER TABLE Vehicle_type...
 ```syntax
 	ALTER TABLE Vehicle_type DROP column wheels;

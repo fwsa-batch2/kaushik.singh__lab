@@ -309,7 +309,7 @@ INSERT INTO company(id,Names,Description)values(800,'Bajaj','Bajaj Auto Limited 
 SELECT * FROM company;
 
 | Id  | Names         | Description                                                                                                                                                                                                                             | status | Created_date        | Modify_date         |
-
+|:----|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------:|:-------------------:|:--------------------|
 |   1 | RollsRoyce    | Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative                                                                                          | ACTIVE | 2022-03-21 23:07:59 | 2022-03-21 23:07:59 |
 |   2 | Ford          | Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States                                                                                                              | ACTIVE | 2022-03-21 23:09:06 | 2022-03-21 23:09:06 |
 |   3 | Lamborghini   | Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in SantAgata Bolognese                                                                                                          | ACTIVE | 2022-03-21 23:10:29 | 2022-03-21 23:10:29 |
@@ -326,7 +326,6 @@ SELECT * FROM company;
 | 600 | Tvs           | TVS Motor Company is an Indian motorcycle manufacturer headquartered in Chennai, Tamil Nadu, India. It is the third largest motorcycle company in India with a revenue of over ₹20,000 crore in 2018–19.                                | ACTIVE | 2022-03-22 13:29:49 | 2022-03-22 13:29:49 |
 | 700 | Honda         | Honda Motor Company, Ltd. is a Japanese public multinational conglomerate manufacturer of automobiles, motorcycles, and power equipment, headquartered in Minato, Tokyo, Japan.                                                         | ACTIVE | 2022-03-22 13:30:49 | 2022-03-22 13:30:49 |
 | 800 | Bajaj         | Bajaj Auto Limited is an Indian multinational two wheeler & three wheeler manufacturing company based in the city of Pune, India. It manufactures motorcycles, scooters and auto rickshaws.                                             | ACTIVE | 2022-03-22 13:32:03 | 2022-03-22 13:32:03 |
-+-----+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
 ### MySQL INSERTING INTO  models...
 ```syntax
 INSERT INTO models(id,Names,wheels,Description)values(00110,'Panthom',4,'ROLLS-ROYCE PHANTOM IS A 5 SEATER LUXURY AVAILABLE IN 2 VARIANTS, A 6749 CC, BS6 AND A SINGLE AUTOMATIC TRANSMISSION.');

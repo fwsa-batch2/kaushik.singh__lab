@@ -461,7 +461,6 @@ SELECT * FROM models;
 | 80081 | pulsar 150        |      2 | Bajaj Pulsar 150 BS6 is the mid variant in the Pulsar 150 lineup and is priced at Rs. 1.07 Lakh (ex-showroom, Delhi). This BS6 variant comes with an engine putting out and of max power and max torque respectively.                                           | ACTIVE | 2022-03-22 18:09:40 | 2022-03-22 18:09:40 |
 | 80082 | Ns 400            |      2 | The price of the Bajaj Pulsar NS400 . To know more about the Bajaj Pulsar NS400 STD images, reviews, offers & other details,Bajaj Pulsar NS400 STD mileage : It returns a certified mileage of 40.84 kmpl                                                       | ACTIVE | 2022-03-22 18:12:14 | 2022-03-22 18:12:14 |
 | 80083 | Dominor 400       |      2 | Bajaj Dominar 400 is powered by 373.3 cc engine.This Dominar 400 engine generates a power of 40 PS @ 8800 rpm and a torque of 35 Nm @ 6500 rpm. Bajaj Dominar 400 gets Disc brakes in the front and rear. Bajaj Dominar 400 has Tubeless                        | ACTIVE | 2022-03-22 18:14:16 | 2022-03-22 18:14:16 |
-+-------+-------------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
 ### Deleting coloum ...
 ```syntax
 delete from vehicle where id='1102';

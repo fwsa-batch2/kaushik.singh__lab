@@ -308,10 +308,10 @@ INSERT INTO company(id,Names,Description)values(800,'Bajaj','Bajaj Auto Limited 
 ```
 SELECT * FROM company;
 
-| Id  | Names         | Description                                                                                                                                                                                                                             | status | Created_date        | Modify_date         |
-|:----|:--------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------:|:-------------------:|:--------------------|
-|   1 | RollsRoyce    | Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative                                                                                          | ACTIVE | 2022-03-21 23:07:59 | 2022-03-21 23:07:59 |
-|   2 | Ford          | Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States                                                                                                              | ACTIVE | 2022-03-21 23:09:06 | 2022-03-21 23:09:06 |
+| Id  | Names         | Description                | status | Created_date        | Modify_date         |
+|:----|:--------------|:--------------------------:|:------:|:-------------------:|:--------------------|
+|   1 | RollsRoyce    | Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative | ACTIVE | 2022-03-21 23:07:59 | 2022-03-21 23:07:59 |
+|   2 | Ford          | Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States | ACTIVE | 2022-03-21 23:09:06 | 2022-03-21 23:09:06 |
 |   3 | Lamborghini   | Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in SantAgata Bolognese                                                                                                          | ACTIVE | 2022-03-21 23:10:29 | 2022-03-21 23:10:29 |
 |   4 | Audi          | Audi AG is a German automotive manufacturer of luxury vehicles headquartered in Ingolstadt, Bavaria, Germany.                                                                                                                           | ACTIVE | 2022-03-21 23:11:21 | 2022-03-21 23:11:21 |
 |   5 | Bentely       | Bentley Motors Limited is a British manufacturer and marketer of luxury cars and SUVs, and a subsidiary of the Volkswagen Group since 1998. Headquartered in Crewe, England, the company was founded as Bentley Motors Limited by W. O. | ACTIVE | 2022-03-21 23:12:17 | 2022-03-21 23:12:17 |

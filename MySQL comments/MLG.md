@@ -20,9 +20,9 @@ CREATE TABLE user (
 );
 ```
 DESC user;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Firstname    | varchar(255) | NO   |     | NULL              |                                               |
 | Lastname     | varchar(255) | NO   |     | NULL              |                                               |
@@ -32,7 +32,7 @@ DESC user;
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 
 ### CREATING TABLE Vehicle_type ...
 ```syntax
@@ -43,13 +43,13 @@ CREATE TABLE Vehicle_type (
 );
 ```
 DESC Vehicle_type;
-+------------+--------------+------+-----+---------+----------------+
+
 | Field      | Type         | Null | Key | Default | Extra          |
-+------------+--------------+------+-----+---------+----------------+
+|:-----------|:-------------|:----:|:----:|:------:|:---------------|
 | Id         | int          | NO   | PRI | NULL    | auto_increment |
 | Names      | varchar(100) | NO   |     | NULL    |                |
 | wheels_typ | int          | YES  |     | NULL    |                |
-+------------+--------------+------+-----+---------+----------------+
+
 
 ### CREATING TABLE Company ...
 ```syntax
@@ -64,16 +64,16 @@ CREATE TABLE Company (
 );
 ```
 DESC company;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | Description  | varchar(255) | NO   |     | NULL              |                                               |
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE  models ...
 ```syntax
 CREATE TABLE models (
@@ -86,9 +86,9 @@ CREATE TABLE models (
     Modify_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 ```
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | wheels       | int          | NO   |     | NULL              |                                               |
@@ -96,7 +96,7 @@ CREATE TABLE models (
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE vehicle ...
 ```syntax
 CREATE TABLE vehicle (
@@ -114,9 +114,9 @@ CREATE TABLE vehicle (
 );
 ```
 DESC vehicle;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | Description  | varchar(255) | NO   |     | NULL              |                                               |
@@ -125,7 +125,7 @@ DESC vehicle;
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
 | company_id   | int          | YES  | MUL | NULL              |                                               |
 | models_id    | int          | YES  | MUL | NULL              |                                               |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE  role ...
 ```syntax
 CREATE TABLE role (
@@ -137,15 +137,15 @@ CREATE TABLE role (
 );
 ```
  DESC role;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE  admin ...
 ```syntax
 CREATE TABLE admin (
@@ -165,9 +165,9 @@ CREATE TABLE admin (
 );
 ```
 DESC admin;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | company_id   | int          | YES  | MUL | NULL              |                                               |
@@ -175,7 +175,7 @@ DESC admin;
 | role_id      | int          | YES  | MUL | NULL              |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE booking ...
 ```syntax
 CREATE TABLE booking (
@@ -193,9 +193,9 @@ CREATE TABLE booking (
 );
 ```
 DESC booking;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | address      | varchar(255) | NO   |     | NULL              |                                               |
@@ -203,7 +203,7 @@ DESC booking;
 | models_id    | int          | YES  | MUL | NULL              |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE reviews ...
 ```syntax
 CREATE TABLE reviews (
@@ -218,16 +218,16 @@ CREATE TABLE reviews (
 );
 ```
 DESC reviews;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | user_id      | int          | YES  | MUL | NULL              |                                               |
 | description  | varchar(255) | NO   |     | NULL              |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### MySQL INSERTING INTO user...
 ```syntax
 INSERT INTO user(id,Firstname,Lastname,Email,dob,password)values(1,'kaushik','singh','kaushick@gmail.com','2003-07-16','Valorant');
@@ -252,9 +252,9 @@ INSERT INTO user(id,Firstname,Lastname,Email,dob,password)values(19,'Saravana','
 INSERT INTO user(id,Firstname,Lastname,Email,dob,password)values(20,'Rohith','krish','rohith@mlg.in','2003-09-15','krish');
 ```
 SELECT * FROM user;
-+----+------------+----------+--------------------+------------+--------------+--------+---------------------+---------------------+
+
 | Id | Firstname  | Lastname | Email              | dob        | password     | status | Created_date        | Modify_date         |
-+----+------------+----------+--------------------+------------+--------------+--------+---------------------+---------------------+
+|:---|:-----------|:--------:|:------------------:|:----------:|:-------------|:-------|:--------------------|:--------------------|
 |  1 | kaushik    | singh    | kaushick@gmail.com | 2003-07-16 | Valorant     | ACTIVE | 2022-03-21 16:00:08 | 2022-03-21 16:00:08 |
 |  2 | Vimal      | raj      | viaml@gmail.com    | 2002-09-19 | uiuxdesgn    | ACTIVE | 2022-03-21 16:01:47 | 2022-03-21 16:01:47 |
 |  3 | Aswath     | kaja     | Aswath@gmail.com   | 2004-02-22 | kajabai      | ACTIVE | 2022-03-21 16:02:40 | 2022-03-21 16:02:40 |
@@ -275,18 +275,18 @@ SELECT * FROM user;
 | 18 | Srimon     | chari    | srimon@mlg.in      | 2000-06-21 | srimon       | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
 | 19 | Saravana   | kumar    | saravana@mlg.in    | 1998-07-13 | saravana     | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
 | 20 | Rohith     | krish    | rohith@mlg.in      | 2003-09-15 | krish        | ACTIVE | 2022-03-23 00:11:49 | 2022-03-23 00:11:49 |
-+----+------------+----------+--------------------+------------+--------------+--------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO Vehicle_type...
 ```syntax
 INSERT INTO Vehicle_type(id,wheels,Names)values(1,'2','Bike');
 INSERT INTO Vehicle_type(id,wheels,Names)values(2,'4','Car');
 ```
-+----+-------+------------+
+
 | Id | Names | wheels_typ |
-+----+-------+------------+
+|:---|:------|:-----------|
 |  1 | Bike  |          2 |
 |  2 | Car   |          4 |
-+----+-------+------------+
+
 ### MySQL INSERTING INTO company...
 ```syntax
 INSERT INTO company(id,Names,Description)values(001,'RollsRoyce','Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative');
@@ -307,9 +307,9 @@ INSERT INTO company(id,Names,Description)values(700,'Honda','Honda Motor Company
 INSERT INTO company(id,Names,Description)values(800,'Bajaj','Bajaj Auto Limited is an Indian multinational two wheeler & three wheeler manufacturing company based in the city of Pune, India. It manufactures motorcycles, scooters and auto rickshaws.');
 ```
 SELECT * FROM company;
-+-----+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
+
 | Id  | Names         | Description                                                                                                                                                                                                                             | status | Created_date        | Modify_date         |
-+-----+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
+
 |   1 | RollsRoyce    | Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative                                                                                          | ACTIVE | 2022-03-21 23:07:59 | 2022-03-21 23:07:59 |
 |   2 | Ford          | Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States                                                                                                              | ACTIVE | 2022-03-21 23:09:06 | 2022-03-21 23:09:06 |
 |   3 | Lamborghini   | Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in SantAgata Bolognese                                                                                                          | ACTIVE | 2022-03-21 23:10:29 | 2022-03-21 23:10:29 |
@@ -625,9 +625,9 @@ INSERT INTO role(id,Names)values(70077,'Honda Admin');
 INSERT INTO role(id,Names)values(80088,'Bajaj Admin');
 ```
 SELECT * FROM role;
-+-------+----------------+--------+---------------------+---------------------+
+
 | Id    | Names          | status | Created_date        | Modify_date         |
-+-------+----------------+--------+---------------------+---------------------+
+|:------|:---------------|:-------|:--------------------|:--------------------|
 |     1 | Super Admin    | ACTIVE | 2022-03-22 23:12:57 | 2022-03-22 23:12:57 |
 |    11 | RR Admin       | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
 |    22 | Ford Admin     | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
@@ -645,7 +645,7 @@ SELECT * FROM role;
 | 60066 | Tvs Admin      | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
 | 70077 | Honda Admin    | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
 | 80088 | Bajaj Admin    | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
-+-------+----------------+--------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO admin...
 ```syntax
 INSERT INTO admin(id,Names,role_id)values(73056,'Aswin',1);
@@ -667,9 +667,9 @@ INSERT INTO admin(id,Names,company_id,user_id,role_id)values(15,'Saravana',700,1
 INSERT INTO admin(id,Names,company_id,user_id,role_id)values(16,'Rohith',800,20,80088);
 ```
 SELECT * FROM admin;
-+-------+------------+------------+---------+---------+---------------------+---------------------+
+
 | Id    | Names      | company_id | user_id | role_id | Created_date        | Modify_date         |
-+-------+------------+------------+---------+---------+---------------------+---------------------+
+|:------|:-----------|:-----------|:--------|:--------|:--------------------|:--------------------|
 |     1 | Cithra     |          1 |       5 |      11 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 |     2 | Shyam      |          2 |       6 |      22 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 |     3 | Prasana    |          3 |       7 |      33 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
@@ -687,17 +687,17 @@ SELECT * FROM admin;
 |    15 | Saravana   |        700 |      19 |   70077 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 |    16 | Rohith     |        800 |      20 |   80088 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 | 73056 | Aswin      |       NULL |    NULL |       1 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
-+-------+------------+------------+---------+---------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO booking...
 ```syntax
 INSERT INTO booking(id,Names,address,user_id,models_id)values(904230,'kaushik','AGS colony 2nd mainroad veleachery jasmine appt 22/23 chennai-42',1,00110);
 ```
 SELECT * FROM booking;
-+--------+---------+------------------------------------------------------------------+---------+-----------+---------------------+---------------------+
+
 | Id     | Names   | address                                                          | user_id | models_id | Created_date        | Modify_date         |
-+--------+---------+------------------------------------------------------------------+---------+-----------+---------------------+---------------------+
+|:-------|:--------|:-----------------------------------------------------------------|:--------|:----------|:--------------------|:--------------------|
 | 904230 | kaushik | AGS colony 2nd mainroad veleachery jasmine appt 22/23 chennai-42 |       1 |       110 | 2022-03-23 00:20:03 | 2022-03-23 00:20:03 |
-+--------+---------+------------------------------------------------------------------+---------+-----------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO reviews...
 ```syntax
 INSERT INTO reviews(id,Names,user_id,description)values(2231,'kaushik',1,'I booked an appointment for a test drive of the RR panthom I chose on the Mlg website. The purchasing process is very easy; once you are done with the paper work and finish the payment, you can take your car home, Thanks to cithra');

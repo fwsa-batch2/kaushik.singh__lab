@@ -394,9 +394,9 @@ INSERT INTO models(id,Names,wheels,Description)values(80082,'Ns 400',2,'The pric
 INSERT INTO models(id,Names,wheels,Description)values(80083,'Dominor 400',2,'Bajaj Dominar 400 is powered by 373.3 cc engine.This Dominar 400 engine generates a power of 40 PS @ 8800 rpm and a torque of 35 Nm @ 6500 rpm. Bajaj Dominar 400 gets Disc brakes in the front and rear. Bajaj Dominar 400 has Tubeless');
 ```
 SELECT * FROM models;
-+-------+-------------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
-| Id    | Names             | wheels | Description                                                                                                                                                                                                                                                     | status | Created_date        | Modify_date         |
-+-------+-------------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
+
+| Id    | Names             | wheels | Description | status | Created_date        | Modify_date         |
+|:----|:--------------|:--------------------------:|:------:|:-------------------:|:--------------------|
 |   110 | Panthom           |      4 | ROLLS-ROYCE PHANTOM IS A 5 SEATER LUXURY AVAILABLE IN 2 VARIANTS, A 6749 CC, BS6 AND A SINGLE AUTOMATIC TRANSMISSION.                                                                                                                                           | ACTIVE | 2022-03-22 14:52:19 | 2022-03-22 14:52:19 |
 |   111 | RR Dawn           |      4 | ROLLS-ROYCE DAWN BLACK BADGE6598 CC, AUTOMATIC, PETROL, 9.8 KMPL                                                                                                                                                                                                | ACTIVE | 2022-03-22 14:53:34 | 2022-03-22 14:53:34 |
 |   112 | Ghost             |      4 | ROLLS-ROYCE GHOST IS OFFERED IN 2 VARIANTS - THE BASE MODEL OF GHOST IS V12                                                                                                                                                                                     | ACTIVE | 2022-03-22 14:54:40 | 2022-03-22 14:54:40 |
@@ -536,6 +536,7 @@ INSERT INTO vehicle(id,Names,Description,price,company_id,models_id)values(8004,
 ```
 SELECT * FROM vehicle;
 | Id   | Names               | Description  | price      | Created_date        | Modify_date         | company_id | models_id |
+|:-----|:--------------------|:------------:|:----------:|:-------------------:|:--------------------|:-----------|:----------|
 
 | 1001 | D V2                | Panigale V2 consists of the classic                                                                                                                                        |    1700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10010 |
 | 1002 | D V4                | THE Panigale V4 sporty monochrome Ducati                                                                                                                                   |    5700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10011 |
@@ -704,7 +705,7 @@ INSERT INTO reviews(id,Names,user_id,description)values(2233,'Haiden',4,'I found
 ```
 SELECT * FROM reviews;
 | Id   | Names   | user_id | description| Created_date| Modify_date|
-
+|:-----|:--------|:--------|:-----------|:------------|:-----------|
 | 2231 | kaushik |       1 | I booked an appointment for a test drive of the RR panthom I chose on the Mlg website. The purchasing process is very easy; once you are done with the paper work and finish the payment, you can take your car home, Thanks to cithra    | 2022-03-23 00:25:33 | 2022-03-23 00:25:33 |
 | 2232 | Aswath  |       3 | Mlg is a trusted dealer to buy and sell used cars. I bought a car from one of their branches about six months ago. It is running smoothly; I haven’t faced any issues so far and it looks like a new car. I am happy with the purchase.   | 2022-03-23 00:27:40 | 2022-03-23 00:27:40 |
 | 2233 | Haiden  |       4 | I found mlg the best place to sell my car. Very good valuation, Very supportive staff and totally hassle free procedure.I was able to sell my car within a day. Thanks Mlg.                                                               | 2022-03-23 00:27:40 | 2022-03-23 00:27:40 |

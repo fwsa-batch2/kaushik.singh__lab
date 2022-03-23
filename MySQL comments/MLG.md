@@ -396,7 +396,7 @@ INSERT INTO models(id,Names,wheels,Description)values(80083,'Dominor 400',2,'Baj
 SELECT * FROM models;
 
 | Id    | Names             | wheels | Description | status | Created_date        | Modify_date         |
-|:----|:--------------|:--------------------------:|:------:|:-------------------:|:--------------------|
+|:------|:------------------|:------:|:-----------:|:------:|:--------------------|:--------------------|
 |   110 | Panthom           |      4 | ROLLS-ROYCE PHANTOM IS A 5 SEATER LUXURY AVAILABLE IN 2 VARIANTS, A 6749 CC, BS6 AND A SINGLE AUTOMATIC TRANSMISSION.                                                                                                                                           | ACTIVE | 2022-03-22 14:52:19 | 2022-03-22 14:52:19 |
 |   111 | RR Dawn           |      4 | ROLLS-ROYCE DAWN BLACK BADGE6598 CC, AUTOMATIC, PETROL, 9.8 KMPL                                                                                                                                                                                                | ACTIVE | 2022-03-22 14:53:34 | 2022-03-22 14:53:34 |
 |   112 | Ghost             |      4 | ROLLS-ROYCE GHOST IS OFFERED IN 2 VARIANTS - THE BASE MODEL OF GHOST IS V12                                                                                                                                                                                     | ACTIVE | 2022-03-22 14:54:40 | 2022-03-22 14:54:40 |
@@ -537,7 +537,6 @@ INSERT INTO vehicle(id,Names,Description,price,company_id,models_id)values(8004,
 SELECT * FROM vehicle;
 | Id   | Names               | Description  | price      | Created_date        | Modify_date         | company_id | models_id |
 |:-----|:--------------------|:------------:|:----------:|:-------------------:|:--------------------|:-----------|:----------|
-
 | 1001 | D V2                | Panigale V2 consists of the classic                                                                                                                                        |    1700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10010 |
 | 1002 | D V4                | THE Panigale V4 sporty monochrome Ducati                                                                                                                                   |    5700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10011 |
 | 1003 | D Monster           | THE  Monster is a standard, or naked bike                                                                                                                                  |    2400001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10012 |

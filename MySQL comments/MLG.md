@@ -2,6 +2,26 @@
 #### MLG  DATABASE...
 
 ```syntax
+SHOW DATABASES;
+```
+
+| Database           |
+|:-------------------|
+| fresh              |
+| fwsa               |
+| information_schema |
+| kaushik            |
+| mlg                |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| tendots            |
+| world              |
+
+
+```syntax
 use mlg;
 ```
 

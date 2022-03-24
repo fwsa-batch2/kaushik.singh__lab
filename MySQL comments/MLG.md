@@ -2,6 +2,26 @@
 #### MLG  DATABASE...
 
 ```syntax
+SHOW DATABASES;
+```
+
+| Database           |
+|:-------------------|
+| fresh              |
+| fwsa               |
+| information_schema |
+| kaushik            |
+| mlg                |
+| mysql              |
+| performance_schema |
+| sakila             |
+| school             |
+| sys                |
+| tendots            |
+| world              |
+
+
+```syntax
 use mlg;
 ```
 
@@ -20,9 +40,9 @@ CREATE TABLE user (
 );
 ```
 DESC user;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Firstname    | varchar(255) | NO   |     | NULL              |                                               |
 | Lastname     | varchar(255) | NO   |     | NULL              |                                               |
@@ -32,7 +52,7 @@ DESC user;
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 
 ### CREATING TABLE Vehicle_type ...
 ```syntax
@@ -43,13 +63,13 @@ CREATE TABLE Vehicle_type (
 );
 ```
 DESC Vehicle_type;
-+------------+--------------+------+-----+---------+----------------+
+
 | Field      | Type         | Null | Key | Default | Extra          |
-+------------+--------------+------+-----+---------+----------------+
+|:-----------|:-------------|:----:|:----:|:------:|:---------------|
 | Id         | int          | NO   | PRI | NULL    | auto_increment |
 | Names      | varchar(100) | NO   |     | NULL    |                |
 | wheels_typ | int          | YES  |     | NULL    |                |
-+------------+--------------+------+-----+---------+----------------+
+
 
 ### CREATING TABLE Company ...
 ```syntax
@@ -64,16 +84,16 @@ CREATE TABLE Company (
 );
 ```
 DESC company;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | Description  | varchar(255) | NO   |     | NULL              |                                               |
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE  models ...
 ```syntax
 CREATE TABLE models (
@@ -86,9 +106,9 @@ CREATE TABLE models (
     Modify_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 ```
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | wheels       | int          | NO   |     | NULL              |                                               |
@@ -96,7 +116,7 @@ CREATE TABLE models (
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE vehicle ...
 ```syntax
 CREATE TABLE vehicle (
@@ -114,9 +134,9 @@ CREATE TABLE vehicle (
 );
 ```
 DESC vehicle;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | Description  | varchar(255) | NO   |     | NULL              |                                               |
@@ -125,7 +145,7 @@ DESC vehicle;
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
 | company_id   | int          | YES  | MUL | NULL              |                                               |
 | models_id    | int          | YES  | MUL | NULL              |                                               |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE  role ...
 ```syntax
 CREATE TABLE role (
@@ -137,15 +157,15 @@ CREATE TABLE role (
 );
 ```
  DESC role;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | status       | varchar(10)  | YES  |     | ACTIVE            |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE  admin ...
 ```syntax
 CREATE TABLE admin (
@@ -165,9 +185,9 @@ CREATE TABLE admin (
 );
 ```
 DESC admin;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | company_id   | int          | YES  | MUL | NULL              |                                               |
@@ -175,7 +195,7 @@ DESC admin;
 | role_id      | int          | YES  | MUL | NULL              |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE booking ...
 ```syntax
 CREATE TABLE booking (
@@ -193,9 +213,9 @@ CREATE TABLE booking (
 );
 ```
 DESC booking;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | address      | varchar(255) | NO   |     | NULL              |                                               |
@@ -203,7 +223,7 @@ DESC booking;
 | models_id    | int          | YES  | MUL | NULL              |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### CREATING TABLE reviews ...
 ```syntax
 CREATE TABLE reviews (
@@ -218,16 +238,16 @@ CREATE TABLE reviews (
 );
 ```
 DESC reviews;
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 | Field        | Type         | Null | Key | Default           | Extra                                         |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+|:-------------|:-------------|:----:|:---:|:-----------------:|:----------------------------------------------|
 | Id           | int          | NO   | PRI | NULL              | auto_increment                                |
 | Names        | varchar(100) | NO   |     | NULL              |                                               |
 | user_id      | int          | YES  | MUL | NULL              |                                               |
 | description  | varchar(255) | NO   |     | NULL              |                                               |
 | Created_date | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED                             |
 | Modify_date  | timestamp    | NO   |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
-+--------------+--------------+------+-----+-------------------+-----------------------------------------------+
+
 ### MySQL INSERTING INTO user...
 ```syntax
 INSERT INTO user(id,Firstname,Lastname,Email,dob,password)values(1,'kaushik','singh','kaushick@gmail.com','2003-07-16','Valorant');
@@ -252,9 +272,9 @@ INSERT INTO user(id,Firstname,Lastname,Email,dob,password)values(19,'Saravana','
 INSERT INTO user(id,Firstname,Lastname,Email,dob,password)values(20,'Rohith','krish','rohith@mlg.in','2003-09-15','krish');
 ```
 SELECT * FROM user;
-+----+------------+----------+--------------------+------------+--------------+--------+---------------------+---------------------+
+
 | Id | Firstname  | Lastname | Email              | dob        | password     | status | Created_date        | Modify_date         |
-+----+------------+----------+--------------------+------------+--------------+--------+---------------------+---------------------+
+|:---|:-----------|:--------:|:------------------:|:----------:|:-------------|:-------|:--------------------|:--------------------|
 |  1 | kaushik    | singh    | kaushick@gmail.com | 2003-07-16 | Valorant     | ACTIVE | 2022-03-21 16:00:08 | 2022-03-21 16:00:08 |
 |  2 | Vimal      | raj      | viaml@gmail.com    | 2002-09-19 | uiuxdesgn    | ACTIVE | 2022-03-21 16:01:47 | 2022-03-21 16:01:47 |
 |  3 | Aswath     | kaja     | Aswath@gmail.com   | 2004-02-22 | kajabai      | ACTIVE | 2022-03-21 16:02:40 | 2022-03-21 16:02:40 |
@@ -275,18 +295,18 @@ SELECT * FROM user;
 | 18 | Srimon     | chari    | srimon@mlg.in      | 2000-06-21 | srimon       | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
 | 19 | Saravana   | kumar    | saravana@mlg.in    | 1998-07-13 | saravana     | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
 | 20 | Rohith     | krish    | rohith@mlg.in      | 2003-09-15 | krish        | ACTIVE | 2022-03-23 00:11:49 | 2022-03-23 00:11:49 |
-+----+------------+----------+--------------------+------------+--------------+--------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO Vehicle_type...
 ```syntax
 INSERT INTO Vehicle_type(id,wheels,Names)values(1,'2','Bike');
 INSERT INTO Vehicle_type(id,wheels,Names)values(2,'4','Car');
 ```
-+----+-------+------------+
+
 | Id | Names | wheels_typ |
-+----+-------+------------+
+|:---|:------|:-----------|
 |  1 | Bike  |          2 |
 |  2 | Car   |          4 |
-+----+-------+------------+
+
 ### MySQL INSERTING INTO company...
 ```syntax
 INSERT INTO company(id,Names,Description)values(001,'RollsRoyce','Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative');
@@ -307,11 +327,11 @@ INSERT INTO company(id,Names,Description)values(700,'Honda','Honda Motor Company
 INSERT INTO company(id,Names,Description)values(800,'Bajaj','Bajaj Auto Limited is an Indian multinational two wheeler & three wheeler manufacturing company based in the city of Pune, India. It manufactures motorcycles, scooters and auto rickshaws.');
 ```
 SELECT * FROM company;
-+-----+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
-| Id  | Names         | Description                                                                                                                                                                                                                             | status | Created_date        | Modify_date         |
-+-----+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
-|   1 | RollsRoyce    | Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative                                                                                          | ACTIVE | 2022-03-21 23:07:59 | 2022-03-21 23:07:59 |
-|   2 | Ford          | Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States                                                                                                              | ACTIVE | 2022-03-21 23:09:06 | 2022-03-21 23:09:06 |
+
+| Id  | Names         | Description                | status | Created_date        | Modify_date         |
+|:----|:--------------|:--------------------------:|:------:|:-------------------:|:--------------------|
+|   1 | RollsRoyce    | Rolls-Royce Motor Cars Limited is a British luxury automobile maker. Rolls-Royce Motor Cars Limited operates from purpose-built administrative | ACTIVE | 2022-03-21 23:07:59 | 2022-03-21 23:07:59 |
+|   2 | Ford          | Ford Motor Company is an American multinational automobile manufacturer headquartered in Dearborn, Michigan, United States | ACTIVE | 2022-03-21 23:09:06 | 2022-03-21 23:09:06 |
 |   3 | Lamborghini   | Automobili Lamborghini S.p.A. is an Italian brand and manufacturer of luxury sports cars and SUVs based in SantAgata Bolognese                                                                                                          | ACTIVE | 2022-03-21 23:10:29 | 2022-03-21 23:10:29 |
 |   4 | Audi          | Audi AG is a German automotive manufacturer of luxury vehicles headquartered in Ingolstadt, Bavaria, Germany.                                                                                                                           | ACTIVE | 2022-03-21 23:11:21 | 2022-03-21 23:11:21 |
 |   5 | Bentely       | Bentley Motors Limited is a British manufacturer and marketer of luxury cars and SUVs, and a subsidiary of the Volkswagen Group since 1998. Headquartered in Crewe, England, the company was founded as Bentley Motors Limited by W. O. | ACTIVE | 2022-03-21 23:12:17 | 2022-03-21 23:12:17 |
@@ -326,7 +346,6 @@ SELECT * FROM company;
 | 600 | Tvs           | TVS Motor Company is an Indian motorcycle manufacturer headquartered in Chennai, Tamil Nadu, India. It is the third largest motorcycle company in India with a revenue of over ₹20,000 crore in 2018–19.                                | ACTIVE | 2022-03-22 13:29:49 | 2022-03-22 13:29:49 |
 | 700 | Honda         | Honda Motor Company, Ltd. is a Japanese public multinational conglomerate manufacturer of automobiles, motorcycles, and power equipment, headquartered in Minato, Tokyo, Japan.                                                         | ACTIVE | 2022-03-22 13:30:49 | 2022-03-22 13:30:49 |
 | 800 | Bajaj         | Bajaj Auto Limited is an Indian multinational two wheeler & three wheeler manufacturing company based in the city of Pune, India. It manufactures motorcycles, scooters and auto rickshaws.                                             | ACTIVE | 2022-03-22 13:32:03 | 2022-03-22 13:32:03 |
-+-----+---------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
 ### MySQL INSERTING INTO  models...
 ```syntax
 INSERT INTO models(id,Names,wheels,Description)values(00110,'Panthom',4,'ROLLS-ROYCE PHANTOM IS A 5 SEATER LUXURY AVAILABLE IN 2 VARIANTS, A 6749 CC, BS6 AND A SINGLE AUTOMATIC TRANSMISSION.');
@@ -395,9 +414,9 @@ INSERT INTO models(id,Names,wheels,Description)values(80082,'Ns 400',2,'The pric
 INSERT INTO models(id,Names,wheels,Description)values(80083,'Dominor 400',2,'Bajaj Dominar 400 is powered by 373.3 cc engine.This Dominar 400 engine generates a power of 40 PS @ 8800 rpm and a torque of 35 Nm @ 6500 rpm. Bajaj Dominar 400 gets Disc brakes in the front and rear. Bajaj Dominar 400 has Tubeless');
 ```
 SELECT * FROM models;
-+-------+-------------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
-| Id    | Names             | wheels | Description                                                                                                                                                                                                                                                     | status | Created_date        | Modify_date         |
-+-------+-------------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
+
+| Id    | Names             | wheels | Description | status | Created_date        | Modify_date         |
+|:------|:------------------|:------:|:-----------:|:------:|:--------------------|:--------------------|
 |   110 | Panthom           |      4 | ROLLS-ROYCE PHANTOM IS A 5 SEATER LUXURY AVAILABLE IN 2 VARIANTS, A 6749 CC, BS6 AND A SINGLE AUTOMATIC TRANSMISSION.                                                                                                                                           | ACTIVE | 2022-03-22 14:52:19 | 2022-03-22 14:52:19 |
 |   111 | RR Dawn           |      4 | ROLLS-ROYCE DAWN BLACK BADGE6598 CC, AUTOMATIC, PETROL, 9.8 KMPL                                                                                                                                                                                                | ACTIVE | 2022-03-22 14:53:34 | 2022-03-22 14:53:34 |
 |   112 | Ghost             |      4 | ROLLS-ROYCE GHOST IS OFFERED IN 2 VARIANTS - THE BASE MODEL OF GHOST IS V12                                                                                                                                                                                     | ACTIVE | 2022-03-22 14:54:40 | 2022-03-22 14:54:40 |
@@ -462,7 +481,6 @@ SELECT * FROM models;
 | 80081 | pulsar 150        |      2 | Bajaj Pulsar 150 BS6 is the mid variant in the Pulsar 150 lineup and is priced at Rs. 1.07 Lakh (ex-showroom, Delhi). This BS6 variant comes with an engine putting out and of max power and max torque respectively.                                           | ACTIVE | 2022-03-22 18:09:40 | 2022-03-22 18:09:40 |
 | 80082 | Ns 400            |      2 | The price of the Bajaj Pulsar NS400 . To know more about the Bajaj Pulsar NS400 STD images, reviews, offers & other details,Bajaj Pulsar NS400 STD mileage : It returns a certified mileage of 40.84 kmpl                                                       | ACTIVE | 2022-03-22 18:12:14 | 2022-03-22 18:12:14 |
 | 80083 | Dominor 400       |      2 | Bajaj Dominar 400 is powered by 373.3 cc engine.This Dominar 400 engine generates a power of 40 PS @ 8800 rpm and a torque of 35 Nm @ 6500 rpm. Bajaj Dominar 400 gets Disc brakes in the front and rear. Bajaj Dominar 400 has Tubeless                        | ACTIVE | 2022-03-22 18:14:16 | 2022-03-22 18:14:16 |
-+-------+-------------------+--------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------------+---------------------+
 ### Deleting coloum ...
 ```syntax
 delete from vehicle where id='1102';
@@ -536,9 +554,8 @@ INSERT INTO vehicle(id,Names,Description,price,company_id,models_id)values(8003,
 INSERT INTO vehicle(id,Names,Description,price,company_id,models_id)values(8004,'Dominor 400','The Dominar 400 sports an LED headlight and turn indicators. Instrumentation is fully-digital and consists of a twin-display setup.',213001,800,80083);
 ```
 SELECT * FROM vehicle;
-+------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------------------+---------------------+------------+-----------+
-| Id   | Names               | Description                                                                                                                                                                | price      | Created_date        | Modify_date         | company_id | models_id |
-+------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------------------+---------------------+------------+-----------+
+| Id   | Names               | Description  | price      | Created_date        | Modify_date         | company_id | models_id |
+|:-----|:--------------------|:------------:|:----------:|:-------------------:|:--------------------|:-----------|:----------|
 | 1001 | D V2                | Panigale V2 consists of the classic                                                                                                                                        |    1700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10010 |
 | 1002 | D V4                | THE Panigale V4 sporty monochrome Ducati                                                                                                                                   |    5700001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10011 |
 | 1003 | D Monster           | THE  Monster is a standard, or naked bike                                                                                                                                  |    2400001 | 2022-03-22 22:56:08 | 2022-03-22 22:56:08 |        100 |     10012 |
@@ -603,7 +620,7 @@ SELECT * FROM vehicle;
 | 8802 | Mg X motion         |  MG OFFERS A TOTAL OF FIVE PRODUCTS WHICH ARE PETROL , DIESEL AND ELECTRIC .                                                                                               |    8000001 | 2022-03-22 21:38:46 | 2022-03-22 21:38:46 |          8 |       881 |
 | 8803 | Mg Hector           | MG HECTOR VARIANTS: IT IS AVAILABLE IN FOUR TRIMS: STYLE                                                                                                                   |    7100001 | 2022-03-22 21:38:46 | 2022-03-22 21:38:46 |          8 |       882 |
 | 8804 | Mg Gloster          | THE BASE MODEL OF GLOSTER IS SUPER                                                                                                                                         |    2100001 | 2022-03-22 21:38:46 | 2022-03-22 21:38:46 |          8 |       883 |
-+------+---------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------+---------------------+---------------------+------------+-----------+
+
 ### MySQL INSERTING INTO role...
 ```syntax
 INSERT INTO role(id,Names)values(1,'Super Admin');
@@ -625,9 +642,9 @@ INSERT INTO role(id,Names)values(70077,'Honda Admin');
 INSERT INTO role(id,Names)values(80088,'Bajaj Admin');
 ```
 SELECT * FROM role;
-+-------+----------------+--------+---------------------+---------------------+
+
 | Id    | Names          | status | Created_date        | Modify_date         |
-+-------+----------------+--------+---------------------+---------------------+
+|:------|:---------------|:-------|:--------------------|:--------------------|
 |     1 | Super Admin    | ACTIVE | 2022-03-22 23:12:57 | 2022-03-22 23:12:57 |
 |    11 | RR Admin       | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
 |    22 | Ford Admin     | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
@@ -645,7 +662,7 @@ SELECT * FROM role;
 | 60066 | Tvs Admin      | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
 | 70077 | Honda Admin    | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
 | 80088 | Bajaj Admin    | ACTIVE | 2022-03-22 23:25:38 | 2022-03-22 23:25:38 |
-+-------+----------------+--------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO admin...
 ```syntax
 INSERT INTO admin(id,Names,role_id)values(73056,'Aswin',1);
@@ -667,9 +684,9 @@ INSERT INTO admin(id,Names,company_id,user_id,role_id)values(15,'Saravana',700,1
 INSERT INTO admin(id,Names,company_id,user_id,role_id)values(16,'Rohith',800,20,80088);
 ```
 SELECT * FROM admin;
-+-------+------------+------------+---------+---------+---------------------+---------------------+
+
 | Id    | Names      | company_id | user_id | role_id | Created_date        | Modify_date         |
-+-------+------------+------------+---------+---------+---------------------+---------------------+
+|:------|:-----------|:-----------|:--------|:--------|:--------------------|:--------------------|
 |     1 | Cithra     |          1 |       5 |      11 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 |     2 | Shyam      |          2 |       6 |      22 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 |     3 | Prasana    |          3 |       7 |      33 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
@@ -687,17 +704,17 @@ SELECT * FROM admin;
 |    15 | Saravana   |        700 |      19 |   70077 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 |    16 | Rohith     |        800 |      20 |   80088 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 | 73056 | Aswin      |       NULL |    NULL |       1 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
-+-------+------------+------------+---------+---------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO booking...
 ```syntax
 INSERT INTO booking(id,Names,address,user_id,models_id)values(904230,'kaushik','AGS colony 2nd mainroad veleachery jasmine appt 22/23 chennai-42',1,00110);
 ```
 SELECT * FROM booking;
-+--------+---------+------------------------------------------------------------------+---------+-----------+---------------------+---------------------+
+
 | Id     | Names   | address                                                          | user_id | models_id | Created_date        | Modify_date         |
-+--------+---------+------------------------------------------------------------------+---------+-----------+---------------------+---------------------+
+|:-------|:--------|:-----------------------------------------------------------------|:--------|:----------|:--------------------|:--------------------|
 | 904230 | kaushik | AGS colony 2nd mainroad veleachery jasmine appt 22/23 chennai-42 |       1 |       110 | 2022-03-23 00:20:03 | 2022-03-23 00:20:03 |
-+--------+---------+------------------------------------------------------------------+---------+-----------+---------------------+---------------------+
+
 ### MySQL INSERTING INTO reviews...
 ```syntax
 INSERT INTO reviews(id,Names,user_id,description)values(2231,'kaushik',1,'I booked an appointment for a test drive of the RR panthom I chose on the Mlg website. The purchasing process is very easy; once you are done with the paper work and finish the payment, you can take your car home, Thanks to cithra');
@@ -705,13 +722,12 @@ INSERT INTO reviews(id,Names,user_id,description)values(2232,'Aswath',3,'Mlg is 
 INSERT INTO reviews(id,Names,user_id,description)values(2233,'Haiden',4,'I found mlg the best place to sell my car. Very good valuation, Very supportive staff and totally hassle free procedure.I was able to sell my car within a day. Thanks Mlg.');
 ```
 SELECT * FROM reviews;
-+------+---------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------+
-| Id   | Names   | user_id | description                                                                                                                                                                                                                               | Created_date        | Modify_date         |
-+------+---------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------+
+| Id   | Names   | user_id | description| Created_date| Modify_date|
+|:-----|:--------|:--------|:-----------|:------------|:-----------|
 | 2231 | kaushik |       1 | I booked an appointment for a test drive of the RR panthom I chose on the Mlg website. The purchasing process is very easy; once you are done with the paper work and finish the payment, you can take your car home, Thanks to cithra    | 2022-03-23 00:25:33 | 2022-03-23 00:25:33 |
 | 2232 | Aswath  |       3 | Mlg is a trusted dealer to buy and sell used cars. I bought a car from one of their branches about six months ago. It is running smoothly; I haven’t faced any issues so far and it looks like a new car. I am happy with the purchase.   | 2022-03-23 00:27:40 | 2022-03-23 00:27:40 |
 | 2233 | Haiden  |       4 | I found mlg the best place to sell my car. Very good valuation, Very supportive staff and totally hassle free procedure.I was able to sell my car within a day. Thanks Mlg.                                                               | 2022-03-23 00:27:40 | 2022-03-23 00:27:40 |
-+------+---------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------+
+
 ### ALTER TABLE Vehicle_type...
 ```syntax
 	ALTER TABLE Vehicle_type DROP column wheels;
@@ -728,3 +744,46 @@ UPDATE Vehicle_type SET wheels_typ = 4 WHERE Id = 2;
 ```syntax
 SELECT*FROM user WHERE (Firstname="kaushik");
 ```
+
+### creating views for company...
+```syntax
+CREATE VIEW company_views AS SELECT Names,status FROM company WHERE status='ACTIVE';
+```
+
+### Showing created views...
+```syntax
+SELECT * FROM company_views;
+```
+
+| Names         | status |
+|:--------------|:-------|
+| RollsRoyce    | ACTIVE |
+| Ford          | ACTIVE |
+| Lamborghini   | ACTIVE |
+| Audi          | ACTIVE |
+| Bentely       | ACTIVE |
+| Benz          | ACTIVE |
+| Bmw           | ACTIVE |
+| MG            | ACTIVE |
+| Ducati        | ACTIVE |
+| Bmw moto      | ACTIVE |
+| Ktm           | ACTIVE |
+| Kawasiki      | ACTIVE |
+| Royal Enfield | ACTIVE |
+| Tvs           | ACTIVE |
+| Honda         | ACTIVE |
+| Bajaj         | ACTIVE |
+
+
+### Creating inner joins for role and admin table...
+```syntax
+SELECT role.Id, role.Names, admin.Names FROM role INNER JOIN admin ON role.Id = admin.Id;
+```
+
+| Id | Names       | Names      |
+|:---|:------------|:-----------|
+|  1 | Super Admin | Cithra     |
+| 11 | RR Admin    | Karanjeeth |
+
+
+

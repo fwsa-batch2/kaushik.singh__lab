@@ -774,3 +774,16 @@ SELECT * FROM company_views;
 | Honda         | ACTIVE |
 | Bajaj         | ACTIVE |
 
+
+### Creating inner joins for role and admin table...
+```syntax
+SELECT role.Id, role.Names, admin.Names FROM role INNER JOIN admin ON role.Id = admin.Id;
+```
+
+| Id | Names       | Names      |
+|:---|:------------|:-----------|
+|  1 | Super Admin | Cithra     |
+| 11 | RR Admin    | Karanjeeth |
+
+
+

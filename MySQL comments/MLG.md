@@ -807,7 +807,7 @@ CREATE INDEX user_In ON user (Firstname,Email,password);
 ```
 
 | Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
-|:---|:------------|:-----------||:---|:------------|:-----------||:---|:------------|:-----------||:---|:------------|:-----------||:---|:------------|:-----------||:---|
+|:------|:-----------|:---------||:------------|:------------|:----------|:---|:------------|:-----------|:---|:------------|:-----------|:---|:------------|:-----------|:---|
 | user  |          0 | PRIMARY  |            1 | Id          | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 | user  |          0 | Email    |            1 | Email       | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 | user  |          1 | user_In  |            1 | Firstname   | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |

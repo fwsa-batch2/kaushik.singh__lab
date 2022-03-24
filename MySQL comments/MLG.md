@@ -814,3 +814,16 @@ CREATE INDEX user_In ON user (Firstname,Email,password);
 | user  |          1 | user_In  |            2 | Email       | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 | user  |          1 | user_In  |            3 | password    | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 
+
+### subqueries for user table by agregate function....
+
+```syntax
+SELECT * FROM admin WHERE user_id>(SELECT COUNT(user_id) FROM admin);
+```
+
+| Id | Names    | company_id | user_id | role_id | Created_date        | Modify_date         |
+|:---|:---------|:-----------|:--------|:--------|:--------------------|:--------------------|
+| 13 | Sanjeev  |        500 |      17 |   50055 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+| 14 | Srimon   |        600 |      18 |   50055 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+| 15 | Saravana |        700 |      19 |   70077 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+| 16 | Rohith   |        800 |      20 |   80088 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |

@@ -827,3 +827,15 @@ SELECT * FROM admin WHERE user_id>(SELECT COUNT(user_id) FROM admin);
 | 14 | Srimon   |        600 |      18 |   50055 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 | 15 | Saravana |        700 |      19 |   70077 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
 | 16 | Rohith   |        800 |      20 |   80088 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+
+### agregate function....
+
+### COUNT...
+
+```syntax
+SELECT COUNT(user_id) FROM admin;
+```
+
+| COUNT(user_id) |
+|:---------------|
+|             16 |

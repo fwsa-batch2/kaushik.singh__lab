@@ -794,5 +794,23 @@ SELECT role.Id, role.Names, admin.Names FROM role INNER JOIN admin ON role.Id = 
 |  1 | Super Admin | Cithra     |
 | 11 | RR Admin    | Karanjeeth |
 
+### CREATING index for user table...
 
+```syntax
+CREATE INDEX user_In ON user (Firstname,Email,password);
+```
+
+### Showing created index...
+
+```syntax
+ SHOW INDEX FROM user;                      
+```
+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|:---|:------------|:-----------||:---|:------------|:-----------||:---|:------------|:-----------||:---|:------------|:-----------||:---|:------------|:-----------||:---|
+| user  |          0 | PRIMARY  |            1 | Id          | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          0 | Email    |            1 | Email       | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          1 | user_In  |            1 | Firstname   | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          1 | user_In  |            2 | Email       | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          1 | user_In  |            3 | password    | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 

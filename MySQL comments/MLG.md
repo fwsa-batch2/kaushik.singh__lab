@@ -839,3 +839,20 @@ SELECT COUNT(user_id) FROM admin;
 | COUNT(user_id) |
 |:---------------|
 |             16 |
+
+
+### Operaters...
+
+### AND...
+
+```syntax
+SELECT * FROM user WHERE Firstname like's%' AND STATUS ='ACTIVE';
+```
+
+| Id | Firstname | Lastname | Email           | dob        | password | status | Created_date        | Modify_date         |
+|:---|:----------|:---------|:----------------|:-----------|:---------|:-------|:--------------------|:--------------------|
+| 17 | Sanjeev   | kumar    | sanjeev@mlg.in  | 1998-07-13 | sanjeev  | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+| 19 | Saravana  | kumar    | saravana@mlg.in | 1998-07-13 | saravana | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+|  6 | Shyam     | anand    | shyam@mlg.in    | 1978-10-18 | Director | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+| 18 | Srimon    | chari    | srimon@mlg.in   | 2000-06-21 | srimon   | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+| 10 | Surya     | umapathy | Surya@mlg.in    | 1998-12-20 | surya    | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |

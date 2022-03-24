@@ -744,3 +744,33 @@ UPDATE Vehicle_type SET wheels_typ = 4 WHERE Id = 2;
 ```syntax
 SELECT*FROM user WHERE (Firstname="kaushik");
 ```
+
+### creating views for company...
+```syntax
+CREATE VIEW company_views AS SELECT Names,status FROM company WHERE status='ACTIVE';
+```
+
+### Showing created views...
+```syntax
+SELECT * FROM company_views;
+```
+
+| Names         | status |
+|:--------------|:-------|
+| RollsRoyce    | ACTIVE |
+| Ford          | ACTIVE |
+| Lamborghini   | ACTIVE |
+| Audi          | ACTIVE |
+| Bentely       | ACTIVE |
+| Benz          | ACTIVE |
+| Bmw           | ACTIVE |
+| MG            | ACTIVE |
+| Ducati        | ACTIVE |
+| Bmw moto      | ACTIVE |
+| Ktm           | ACTIVE |
+| Kawasiki      | ACTIVE |
+| Royal Enfield | ACTIVE |
+| Tvs           | ACTIVE |
+| Honda         | ACTIVE |
+| Bajaj         | ACTIVE |
+

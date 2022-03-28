@@ -815,7 +815,7 @@ CREATE INDEX user_In ON user (Firstname,Email,password);
 | user  |          1 | user_In  |            3 | password    | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 
 
-### subqueries for user table by agregate function....
+### subqueries for user table by aggregate function....
 
 ```syntax
 SELECT * FROM admin WHERE user_id>(SELECT COUNT(user_id) FROM admin);

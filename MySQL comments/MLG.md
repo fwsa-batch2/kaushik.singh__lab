@@ -1,6 +1,15 @@
 
 #### MLG  DATABASE...
 
+### ER Diagram...
+![Screenshot (83)](https://user-images.githubusercontent.com/93571059/159882832-d70ff29a-8d06-41a3-8678-e9b01a16aa74.png)
+
+
+![Screenshot (84)](https://user-images.githubusercontent.com/93571059/159882858-4a7ccc90-a2f0-4b04-b6ee-0c0606c5e09e.png)
+
+
+### Showing DATABASE 
+
 ```syntax
 SHOW DATABASES;
 ```
@@ -785,5 +794,65 @@ SELECT role.Id, role.Names, admin.Names FROM role INNER JOIN admin ON role.Id = 
 |  1 | Super Admin | Cithra     |
 | 11 | RR Admin    | Karanjeeth |
 
+### CREATING index for user table...
+
+```syntax
+CREATE INDEX user_In ON user (Firstname,Email,password);
+```
+
+### Showing created index...
+
+```syntax
+ SHOW INDEX FROM user;                      
+```
+
+| Table | Non_unique | Key_name | Seq_in_index | Column_name | Collation | Cardinality | Sub_part | Packed | Null | Index_type | Comment | Index_comment | Visible | Expression |
+|:------|:-----------|:---------|:------------|:------------|:----------|:------------|:---------|:-------|:-----|:-----------|:--------|:--------------|:--------|:-------------|
+| user  |          0 | PRIMARY  |            1 | Id          | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          0 | Email    |            1 | Email       | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          1 | user_In  |            1 | Firstname   | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          1 | user_In  |            2 | Email       | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
+| user  |          1 | user_In  |            3 | password    | A         |          19 |     NULL |   NULL |      | BTREE      |         |               | YES     | NULL       |
 
 
+### subqueries for user table by aggregate function....
+
+```syntax
+SELECT * FROM admin WHERE user_id>(SELECT COUNT(user_id) FROM admin);
+```
+
+| Id | Names    | company_id | user_id | role_id | Created_date        | Modify_date         |
+|:---|:---------|:-----------|:--------|:--------|:--------------------|:--------------------|
+| 13 | Sanjeev  |        500 |      17 |   50055 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+| 14 | Srimon   |        600 |      18 |   50055 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+| 15 | Saravana |        700 |      19 |   70077 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+| 16 | Rohith   |        800 |      20 |   80088 | 2022-03-23 00:12:48 | 2022-03-23 00:12:48 |
+
+### aggregate function....
+
+### COUNT...
+
+```syntax
+SELECT COUNT(user_id) FROM admin;
+```
+
+| COUNT(user_id) |
+|:---------------|
+|             16 |
+
+
+### Operaters...
+
+### AND...
+
+```syntax
+SELECT * FROM user WHERE Firstname like's%' AND STATUS ='ACTIVE';
+```
+
+| Id | Firstname | Lastname | Email           | dob        | password | status | Created_date        | Modify_date         |
+|:---|:----------|:---------|:----------------|:-----------|:---------|:-------|:--------------------|:--------------------|
+| 17 | Sanjeev   | kumar    | sanjeev@mlg.in  | 1998-07-13 | sanjeev  | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+| 19 | Saravana  | kumar    | saravana@mlg.in | 1998-07-13 | saravana | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+|  6 | Shyam     | anand    | shyam@mlg.in    | 1978-10-18 | Director | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+| 18 | Srimon    | chari    | srimon@mlg.in   | 2000-06-21 | srimon   | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
+| 10 | Surya     | umapathy | Surya@mlg.in    | 1998-12-20 | surya    | ACTIVE | 2022-03-22 23:58:47 | 2022-03-22 23:58:47 |
